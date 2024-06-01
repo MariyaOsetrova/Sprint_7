@@ -16,11 +16,11 @@ public class OrderSteps {
                 .and()
                 .body(order)
                 .when()
-                .post(EndPoints.ORDER);
+                .post(EndPoints.LIST_ORDERS);
 
     }
 
-    @Step("Получение заказа")
+    @Step("Получение списка заказов")
     public Response getOrder() {
         return given()
                 .header("Content-Type", "application/json")
@@ -28,7 +28,7 @@ public class OrderSteps {
 
     }
 
-    @Step("Отмена списка заказов")
+    @Step("Отмена заказа")
     public Response cancelOrder(String track) {
         return given()
                 .header("Content-Type", "application/json")
